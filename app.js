@@ -20,8 +20,9 @@ async function setupCamera() {
 function green(data) {
   for (let i = 0; i < data.length; i += 4) {
     data[i] = data[i]; // Invert Red
-    data[i + 1] = data[i + 1] + 60; // Invert Green
+    data[i + 1] = data[i + 1] + 100; // Invert Green
     data[i + 2] = data[i + 2]; // Invert Blue
+    // data[i + 3] = data[i + 3];
   }
 }
 
@@ -29,7 +30,7 @@ function drawWebcamContinuous() {
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   const scannedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const scannedData = scannedImage.data;
-  const pixelationFactor = 5;
+  const pixelationFactor = 6;
   green(scannedData);
   for (let y = 0; y < canvas.height; y += pixelationFactor) {
     for (let x = 0; x < canvas.width; x += pixelationFactor) {

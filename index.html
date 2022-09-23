@@ -9,12 +9,19 @@
   <script src="./app.js"></script>
 </head>
 <body>
-  <canvas id="facecanvas"></canvas>
+  <div class="camera">
+    <canvas id="facecanvas"></canvas>
+    <video autoplay muted hidden playsinline id="video" style="
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 500px;
+    height: 500px;"></video>
+    <button id="camera--trigger">PHOTO</button>
+  </div>
+  
+  <div class="roll">
+    <img src="//:0" alt="" id="camera--output">
+  </div>
 
-  <video autoplay muted hidden playsinline id="video" style="
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  width: 500px;
-  height: 500px;"></video>
 </body>
 </html>

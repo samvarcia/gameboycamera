@@ -29,6 +29,8 @@ function green(data) {
 function drawWebcamContinuous() {
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   const scannedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const cameraOutput = document.getElementById("camera--output");
+  const cameraTrigger = document.getElementById("camera--trigger");
   const scannedData = scannedImage.data;
   const pixelationFactor = 6;
   green(scannedData);
@@ -49,6 +51,14 @@ function drawWebcamContinuous() {
   // for (let i = 0; i < scannedData.length; i += 4) {
   //   console.log(scannedData[i]);
   // }
+  cameraTrigger.onclick = function () {
+    console.log("SMILE");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext("2d").drawImage(video, 0, 0);
+    cameraOutput.src = canvas.toDataURL("image/webp");
+    cameraOutput.classList.add("taken");
+  };
   requestAnimationFrame(drawWebcamContinuous);
 }
 

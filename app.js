@@ -32,7 +32,7 @@ function drawWebcamContinuous() {
   const cameraOutput = document.getElementById("camera--output");
   const cameraTrigger = document.getElementById("camera--trigger");
   const scannedData = scannedImage.data;
-  const pixelationFactor = 6;
+  const pixelationFactor = 4;
   green(scannedData);
   for (let y = 0; y < canvas.height; y += pixelationFactor) {
     for (let x = 0; x < canvas.width; x += pixelationFactor) {

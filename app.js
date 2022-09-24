@@ -51,13 +51,37 @@ function drawWebcamContinuous() {
   // for (let i = 0; i < scannedData.length; i += 4) {
   //   console.log(scannedData[i]);
   // }
+
+  function pixelate() {
+    ctx.drawImage(video, 0, 0);
+    let photoData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    for (let y = 0; y < canvas.height; y += pixelationFactor) {
+      for (let x = 0; x < canvas.width; x += pixelationFactor) {
+        // extracting the position of the sample pixel
+        const pixelIndexPosition = (x + y * canvas.width) * 4;
+        // drawing a square replacing the current pixels
+        ctx.fillStyle = `rgba(
+            ${photoData[pixelIndexPosition]},
+            ${photoData[pixelIndexPosition + 1]},
+            ${photoData[pixelIndexPosition + 2]},
+            ${photoData[pixelIndexPosition + 3]}
+            )`;
+        ctx.fillRect(x, y, pixelationFactor, pixelationFactor);
+      }
+    }
+  }
   cameraTrigger.onclick = function () {
-    console.log("SMILE");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext("2d").drawImage(video, 0, 0);
-    cameraOutput.src = canvas.toDataURL("image/webp");
-    cameraOutput.classList.add("taken");
+    let imagePixelated = canvas.toDataURL();
+    pixelate();
+    cameraOutput.src = imagePixelated;
+    // canvas.width = video.videoWidth;
+    // canvas.height = video.videoHeight;
+    // ctx.drawImage(video, 0, 0);
+    // const photo = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    // const photoData = photo.data;
+    // console.log(photo.data);
+    // cameraOutput.src = canvas.toDataURL("image/webp");
+    // cameraOutput.classList.add("taken");
   };
   requestAnimationFrame(drawWebcamContinuous);
 }

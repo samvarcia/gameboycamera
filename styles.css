@@ -16,13 +16,19 @@ body {
 }
 
 #facecanvas {
-  width: 300px;
+  border-radius: 20px;
+  width: 500px;
   height: 500px;
 }
 
 button {
-  margin-top: 5px;
-  width: 250px;
+  margin-top: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FD2930;
+  cursor: pointer;
+  border: none;
 }
 
 .roll {
@@ -40,7 +46,7 @@ button {
 
 @media screen and (max-width: 800px) {
   #facecanvas {
-    width: 90vw;
-    height: 80vh;
+    width: 300px;
+    height: 300px;
   }
 }

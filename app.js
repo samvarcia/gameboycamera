@@ -70,10 +70,11 @@ function drawWebcamContinuous() {
       }
     }
   }
-  cameraTrigger.onclick = function () {
+  canvas.onclick = function () {
     let imagePixelated = canvas.toDataURL();
     pixelate();
     cameraOutput.src = imagePixelated;
+    cameraOutput.style.display = "block";
     // canvas.width = video.videoWidth;
     // canvas.height = video.videoHeight;
     // ctx.drawImage(video, 0, 0);

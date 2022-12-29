@@ -11,10 +11,8 @@ body {
 }
 
 .camera {
-  width: 300px;
-  height: 300px;
-  background-color: #C8C9CD;
-  border-radius: 20px;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -23,18 +21,17 @@ body {
 }
 
 .display {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
 }
 
 #facecanvas {
-  border-radius: 20px;
-  width: 280px;
-  height: 280px;
+  width: 1080px;
+  height: 1920px;
   align-self: flex-end;
   z-index: 5px
 }
@@ -66,7 +63,7 @@ button {
 
 @media screen and (max-width: 800px) {
   #facecanvas {
-    width: 280px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
   }
 }

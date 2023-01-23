@@ -13,7 +13,7 @@ body {
 .camera {
   width: 300px;
   height: 300px;
-  background-color: #C8C9CD;
+  /* background-color: #C8C9CD; */
   border-radius: 20px;
   text-align: center;
   display: flex;
@@ -64,9 +64,23 @@ button {
   display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 320px) {
   #facecanvas {
     width: 280px;
-    height: 280px;
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  #facecanvas {
+    width: 335px;
+    height: 418.75px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  #facecanvas {
+    width: 385px;
+    height: 481.25px;
   }
 }

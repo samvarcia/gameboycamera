@@ -4,8 +4,13 @@ async function setupCamera() {
     audio: false,
     video: {
       facingMode: "environment",
+<<<<<<< HEAD
       width: { ideal: 1080 },
       height: { ideal: 1350 },
+=======
+      width: { ideal: 500 },
+      height: { ideal: 625 },
+>>>>>>> 4/5
     },
   });
   video.srcObject = stream;

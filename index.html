@@ -11,21 +11,25 @@
 </head>
 <body>
   <div class="container">
+      <div class="camera">
         <div class="display">
+          <div>
             <canvas id="facecanvas">
               
-              <!-- <button id="camera--trigger"></button> -->
+              <button id="camera--trigger"></button>
             </canvas>
             <video autoplay muted hidden playsinline id="video" style="
             -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
-
-          "></video>
+            width: 500px;
+            height: 500px;"></video>
+          </div>
         </div>
+      </div>
       
-      <!-- <div class="roll">
+      <div class="roll">
         <img src="//:0" alt="" id="camera--output">
-      </div> -->
+      </div>
   </div>
 
 </body>

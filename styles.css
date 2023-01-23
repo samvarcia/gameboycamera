@@ -6,6 +6,7 @@ body {
 }
 
 .container {
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,58 +14,45 @@ body {
   height: 99vh;
 }
 
-.camera {
-  width: 300px;
-  height: 300px;
-  /* background-color: #C8C9CD; */
-  border-radius: 20px;
-  text-align: center;
+.display {
+  /* height: 75vh; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.display {
-  width: 100%;
-  aspect-ratio: 4/5;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #facecanvas {
   width: 100%;
-  aspect-ratio: 4/5;
-  /* object-fit: fill; */
-  align-self: flex-end;
-  z-index: 5px
+  border-radius: 18px;
 }
 
-button {
-  margin-top: 0;
-  width: 50px;
-  height: 50px;
+#camera--trigger {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background-color: #FD2930;
+  background-color: #E24E1C;
   cursor: pointer;
-  border: none;
+  border: 25px solid rgba(226, 78, 28, 0.59);
   position: relative;
   bottom: 0;
 }
 
-.roll {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+.roll {}
 
 .roll img {
-  margin-top: 20px;
-  width: 200px;
-  height: 200px;
+  width: 50px;
+  height: 62.5px;
   display: none;
+}
+
+.actions {
+  margin: 50px 40px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 320px) {

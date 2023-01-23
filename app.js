@@ -9,6 +9,7 @@ async function setupCamera() {
     },
   });
   video.srcObject = stream;
+  // let switchCam = document.getElementById("camera--switch");
 
   return new Promise((resolve) => {
     video.onloadedmetadata = () => {
@@ -27,6 +28,7 @@ function green(data) {
 }
 
 function drawWebcamContinuous() {
+  const trigger = document.getElementById("camera--trigger");
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   const scannedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const cameraOutput = document.getElementById("camera--output");
@@ -70,7 +72,8 @@ function drawWebcamContinuous() {
       }
     }
   }
-  canvas.onclick = function () {
+
+  trigger.onclick = function () {
     let imagePixelated = canvas.toDataURL();
     pixelate();
     cameraOutput.src = imagePixelated;

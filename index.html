@@ -11,12 +11,10 @@
 </head>
 <body>
   <div class="container">
-      <div class="camera">
         <div class="display">
           <div>
             <canvas id="facecanvas">
               
-              <button id="camera--trigger"></button>
             </canvas>
             <video autoplay muted hidden playsinline id="video" style="
             -webkit-transform: scaleX(-1);
@@ -24,12 +22,16 @@
             width: 500px;
             height: 500px;"></video>
           </div>
+          <div class="actions">
+            <button id="camera--switch">Switch</button>
+            <button id="camera--trigger"></button>
+            <div class="roll">
+              <img src="//:0" alt="" id="camera--output">
+            </div>
+          </div>
         </div>
       </div>
       
-      <div class="roll">
-        <img src="//:0" alt="" id="camera--output">
-      </div>
   </div>
 
 </body>

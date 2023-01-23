@@ -4,8 +4,8 @@ async function setupCamera() {
     audio: false,
     video: {
       facingMode: "environment",
-      width: { ideal: 500 },
-      height: { ideal: 625 },
+      width: 500,
+      height: 625,
     },
   });
   video.srcObject = stream;
@@ -20,9 +20,9 @@ async function setupCamera() {
 
 function green(data) {
   for (let i = 0; i < data.length; i += 4) {
-    data[i] = data[i]; // Invert Red
-    data[i + 1] = data[i + 1] + 100; // Invert Green
-    data[i + 2] = data[i + 2]; // Invert Blue
+    data[i] = data[i] - 100; // Invert Red
+    data[i + 1] = data[i + 1] - 100 + 100; // Invert Green
+    data[i + 2] = data[i + 2] - 100; // Invert Blue
     // data[i + 3] = data[i + 3];
   }
 }
@@ -34,7 +34,7 @@ function drawWebcamContinuous() {
   const cameraOutput = document.getElementById("camera--output");
   const cameraTrigger = document.getElementById("camera--trigger");
   const scannedData = scannedImage.data;
-  const pixelationFactor = 4;
+  const pixelationFactor = 8;
   green(scannedData);
   for (let y = 0; y < canvas.height; y += pixelationFactor) {
     for (let x = 0; x < canvas.width; x += pixelationFactor) {
